@@ -1,0 +1,46 @@
+ 路径表示方式
+  斜杠  /
+  反斜杠 \
+
+斜杠
+  Windows        C:\Program Files\Microsoft Office
+  C language      C:\User\Dage
+  C plus plus       C:\User\Dage
+  Python             C:\User\Dage
+  MATLAB              C:\User\Dage
+
+ 反斜杠系统：
+  Linux            /home/dmstsai
+  Java             D:/Mycoding/Java
+  MySQL            D:/My_IR/train_.csv                      load data local infile 'D:\\My_IR\\train_.csv' 
+  R language       C:/Users/Dage/Documents  C:\\Users\\age\\Documents
+  Perl             D:/Mycoding/Perl         D:\\Mycoding\\Perl 
+  PHP
+  HTML
+  XML
+
+ \转义
+
+网络文件路径
+  浏览器    https://www.baidu.com/
+ 
+ 相对路径和绝对路径
+ 工作路径
+ 默认路径
+ 搜索路径
+
+ Linux路径切换
+  根目录
+  绝对路径从根目录写
+  cd
+  cd..   退回上一级目录
+  cd -   能完成当前目录和之前所在的目录之间的切换
+  cd ~   回到个人的主文件夹内
+  pushd  可以完成多个不同路径之间的切换
+  
+  /home   绝对路径
+  ./home  本目录下路径
+  ../home  相对路径
+
+   cd <change Directory>
+   pwd  mkdir rmdir

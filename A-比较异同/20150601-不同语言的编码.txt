@@ -1,0 +1,54 @@
+不同环境或语言下的乱码或者其他关于编码的问题
+R 语言
+Perl语言
+Java语言
+C语言
+MySQL
+
+
+R语言
+window 一般是gbk的编码，读取utf-8的文件时，需要声明读取编码就OK了。 source(file,encoding="utf-8")
+linux的情况复杂一些
+1. locale要设置成zh_CN
+2. 要安装中文字符集，或者从window下复制过去
+3. R读取，统一用utf-8的。
+最复杂的情况是DB连接
+1. 有时候DB的字符集是gb2312, gbk, utf8等
+2. 在DB读取的时候，DBI包，要设置DB的字符编码
+3. 当把数据读到R中时，要跟R的环境的编码要统一
+4. linux/win两套环境，编码部分要是区别写的。
+路径名除了不要中文外，最好也不要空格（如：Program Files (x86)），否则以后生成R安装包时，也会出现很多问题。
+
+
+
+Perl语言
+ 先来学习一下perl中编码的基础知识：在Perl看来, 字符串只有两种形式。
+一种是octets, 即8位序列, 也就是我们通常说的字节数组。
+另一种utf8编码的字符串, perl管它叫string。 也就是说: Perl只认识两种编码: Ascii(octets)和utf8(string)。
+
+读入乱码：
+1.   字符串本来不是utf8编码的, 应该先把它转成utf8编码, 并且使它的utf8 flag处于开启状态. 比如下面将gbk转换成utf8编码。
+my $out=decode("gbk",$str);
+2.   字符串编码本来就是utf8, 只是utf8 flag没有打开, 那么你可以使用以下方式中的任一种来开启utf8 flag
+$str = Encode::decode_utf8($str);
+$str = Encode::decode("utf8", $str);
+2、  字符串输出乱码
+字符串在程序内被正确地处理后, 要展现给用户.
+ 这时我们需要把字符串从perl internal form转化成用户能接受的形式. 
+简单地说, 就是把字符串从utf8编码转换成输出的编码或表现界面的编码. 
+这时候, 我们使用如下代码来将utf8的编码转换成其他的编码：
+ $str = Encode::encode('charset', $str);
+
+
+C语言
+
+gcc编译的时候 是当作 ansi格式处理，所以会出现乱码
+
+JAVA
+对于Java由于默认的编码方式是 UNICODE,所以用中文也易出问题,常见的解决是
+String s2 = new String(s1.getBytes(“ISO-8859-1”),”GBK”);
+
+
+网址路径的编码，用的是utf-8编码。
+查询字符串的编码，用的是操作系统的默认编码
+不同的操作系统、不同的浏览器、不同的网页字符集，将导致完全不同的编码结

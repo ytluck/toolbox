@@ -1,0 +1,48 @@
+语言后缀名 
+ C language       .c       .obj
+  C ++            .c++
+  Python           .py   
+  MATLAB          .m       .mat
+  Java            .java     .class                                       
+  R language      .R      .Rdata  
+  Perl             .pl              
+  PHP              .php
+  HTML             .html
+  XML              .xml
+  MySQL            .sql
+
+ py pyw是源文件
+ pyc pyo是编译的文件 
+ pyd其实是动态链接库本质是windows的dll文件或者unix的so文件pyw是没有控制台的，也就是默认用pythonw打开的文件。py是默认用python打开的。
+ pyo是优化的编译文件（虽然目前跟pyc文件基本上没什么区别
+程序文件后缀名
+  安装程序
+  安装包 软件的所有文件释放到硬盘上，
+         完成修改注册表、修改系统设置、创建快捷方式等工作
+可执行程序
+卸载程序
+
+打包成双击执行
+     命令行执行
+
+ exe
+ jar
+
+后缀名 文件类型 
+.h     头文件
+.lib   静态链接库
+EXE    可执行程序文件 
+COM    可执行命令文件 
+BAT    可执行批处理文件    由DOS或Windows系统内嵌的命令解释器来解释运行。本质，是一堆DOS命令按一定顺序排列而形成的集合。
+TXT     文本文件 
+DAT     数据文件 
+BAK     备份文件 
+DLL                 Dynamic Link Library  通过使用 DLL，程序可以实现模块化，由相对独立的组件组成
+
+以.exe为后缀的文件就是可执行文件， 
+以.bat为后缀的文件就是可执行批处理文件
+动态链接需要发行DLL，但EXE本身比较小，静态链接不需要发行DLL，但本身就比较大了
+静态链接产生的执行文件执行是不需要库文件的支持,而动态链接产生的执行文件运行过程中需要库文件支持
+静态链接库的使用需要库的开发者提供生成库的.h头文件和.lib文件。要想用就得全要！要不就都别要！:)
+
+linux库文件分为静态库和动态库两种。静态库习惯以.a 结尾,而动态库习惯以.so(shared object)结尾。而且必须以lib开头

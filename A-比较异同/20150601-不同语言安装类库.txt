@@ -1,0 +1,212 @@
+CRAN（Comprehensive R    Archive Network）（R综合典藏网）
+CPAN（Comprehensive Perl Archive Network）“Perl综合典藏网”
+Python 安装类库
+Java 扩展模块
+
+
+################################################
+R包需要安装install安装完成后，要进行加载loaded
+search()
+
+getOption("defaultPackages")  base datasets graphics methods stats utils grDevices
+
+library()
+detach()
+
+安装方式
+1. 自动安装（在线安装）
+
+在R的控制台,输入
+
+install.packages("gridExtra")  # 安装 gridExtra
+
+install.packages("stepNorm", contriburl="http://www.your.url",  dependencies = TRUE) # 安装 stepNorm
+
+若要指定安装目录 (e.g. “mydir”)，则输入
+
+install.packages("stepNorm", contriburl="http://www.biostat.ucsf.edu/jean/software", lib="mydir")
+
+这种方法可能找不到需要的package，那么可以用 方法2
+
+2. 手动安装（离线安装）
+
+Windows:
+
+下载package.zip文件
+
+打开R的菜单栏->Packages->“Install package from local zip file…”
+
+选择package.zip文件
+###########################################
+Perl 程序把变量和子程序的名称存贮到符号表中，Perl 的符号表中名字的集合就称为 Perl 包 (package)。
+定义语法为：package mypack；
+每个符号表有其自己的一组变量、子程序名，各组名字是不相关的，
+因此可以在不同的 Perl 包中使用相同的变量名，而代表的是不同的变量。
+Perl 模块有两种来源，一种是随 Perl 发行版本一同打包的，
+                    另外就是用 CPAN 中下载的。
+Perl 模块和包的概念并不清晰，两者有时可以混用。
+在程序中使用模块的操作称为导入模块；
+导入模块关键字 use；如：use ModuleName；
+模块被导入后，其中的子程序和变量就可以直接使用了；
+要取消一个已经导入了的模块，可以使用关键字 no；如：no ModuleName。
+Perl到了第五版增加了模块的概念，用来提供面向对象编程的能力。这是Perl语言发展史上　 
+的一个里程碑。此后，广大自由软件爱好者开发了大量功能强大、构思精巧的Perl模块，极大地　 
+扩展了Perl语言的功能。CPAN（Comprehensive　Perl　Archive　Network）是internet上Perl模块　
+最大的集散地，包含了现今公布的几乎所有的perl模块。　 
+
+　　　　几个主要的CPAN站点有：　 
+　　　　国内：ftp://freesoft.cgi.gov.cn/pub/languages/perl/CPAN　 
+　　　　　　　　　　http://cpan.qz.fj.cn/　 
+　　　　国外：http://www.cpan.org/　 
+　　　　　　　　　　http://www.perl.com/CPAN-local/　 
+
+　　　　我在这里介绍一下各种平台下perl模块的安装方法。以安装DBI模块为例。　 
+　　 
+
+1、Win32下的安装方法：　 
+
+　　　　在Win32下，建议使用ActiveState的Perl　for　Win32，即ActivePerl。ActivePerl的主页在：　 
+http://www.activestate.com/　。在Win32下，最好也使用专门为ActivePerl定制的Perl模块。从　 
+CPAN下载的Perl模块不能很好地在ActivePerl下使用。类似于CPAN模块，ActiveState也开发　 
+了一个自动安装工具叫做PPM（Perl　Package　Manager）。　 
+
+最通常的安装方法是：　 
+首先联上线　 
+在dos命令行下启动ppm　 
+ppm　 
+
+获得帮助　 
+PPM>h　 
+
+列出ActiveState站点上所有为Perl模块的清单。　 
+PPM>search　 
+
+安装模块　 
+PPM>install　DBI　 
+自动完成DBI模块从下载到安装的全过程。　 
+
+退出　 
+PPM>q　 
+
+如果您的机器位于防火墙之后，通过http代理上网，那么可以使用下面的方法。　 
+
+对于老的基于perl　5.005的ActivePerl版本（ActivePerl　522以下版本，不包括ActivePerl　522），从　 
+http://www.ActiveState.com/ppmpackages/5.005/zips/下载您需要的Perl模块，例如DBI.zip。　 
+将其解压缩在C:/TEMP/DBI下　 
+cd　/TEMP/DBI　 
+ppm　install　DBI.PPD　 
+
+最新的基于perl　5.6的ActivePerl版本（ActivePerl　613及以上版本）的安装方法略有不同。安　 
+装ActivePerl　613前需要先安装Microsoft的Windows　Installer。　 
+Windows　Installer从这里下载：　 
+http://activestate.com/download/contrib/Microsoft/9x/InstMsi.exe　 
+ActivePerl　613从这里下载：　 
+http://activestate.com/download/ ... ePerl-5.6.0.613.msi　 
+
+对于基于perl　5.6的ActivePerl版本，从　 
+http://www.activestate.com/PPMPackages/5.6/　 
+下载您需要的Perl模块的安装描述文件，例如DBI.PPD　 
+安装模块前需要先联上线　 
+ppm　install　DBI.PPD。　 
+　　 
+
+安装DBD ppm install DBD::mysql
+
+2、Linux/Unix下的安装方法：　 
+
+　　　　Linux/Unix下安装Perl模块有两种方法：手工安装和自动安装。第一种方法是从CPAN上下载　 
+您需要的模块，手工编译、安装。第二种方法是联上internet，使用一个叫做CPAN的模块自动完　 
+成下载、编译、安装的全过程。　 
+
+a、手工安装的步骤：　 
+
+从CPAN下载了DBI模块1.13版的压缩文件DBI-1.13.tar.gz，假设放在/usr/local/src/下。　 
+cd　/usr/local/src　 
+解压缩这个文件：　 
+tar　xvzf　DBI-1.13.tar.gz　 
+这时会新建一个DBI-1.13的目录。　 
+cd　DBI-1.13　 
+
+生成makefile：　 
+perl　Makefile.PL　 
+建立模块　 
+make　 
+测试模块　 
+make　test　 
+如果测试结果报告“all　test　ok”，您就可以放心地安装编译好的模块了。安装模块前，先要　 
+确保您对perl5安装目录有可写权限（通常以su命令获得），执行：　 
+make　install　 
+
+现在，写个程序试试吧。　 
+
+#!/usr/bin/perl　-w　 
+use　strict;　 
+use　DBI;　 
+..　 
+　　 
+
+　　　　上述步骤适合于Linux/Unix下绝大多数的Perl模块。可能还有少数模块的安装方法略有差别，　 
+所以最好先看看安装目录里的README或INSTALL。另外，上述过程是针对动态链接的Perl编译　 
+器（所有Linux下预安装的Perl都是动态链接的），如果您在使用一个静态链接的Perl，您需要将　 
+新的模块静态链接到perl编译器中，可能还需要重启机器。　 
+　　 
+
+b、使用CPAN模块自动安装：　 
+
+安装前需要先联上线，并且您需要取得root权限。　 
+perl　-MCPAN　-e　shell　 
+初次运行CPAN时需要做一些设置，如果您的机器是直接与internet相联（拨号上网、专线，etc.），　
+那么一路回车就行了，只需要在最后选一个离您最近的CPAN镜像站点。例如我选的是位于国内的　 
+中国自由软件库ftp://freesoft.cgi.gov.cn/pub/languages/perl/CPAN　。否则，如果您的机器　 
+位于防火墙之后，还需要设置ftp代理或http代理。　 
+
+获得帮助　 
+cpan>h　 
+
+列出CPAN上所有模块的列表　 
+cpan>m　 
+
+安装模块　 
+cpan>install　DBI　 
+自动完成DBI模块从下载到安装的全过程。　 
+
+退出　 
+cpan>q　 
+　　 
+　　 
+
+　　　　以上较为详细地描述了各种平台下Perl模块的安装方法。希望能够帮助国内Perl爱好者们通过　 
+使用现有大量优秀的Perl模块，避免重复劳动，提高效率，更好发挥Perl语言的强大威力。
+退出　 
+cpan>q　 　 
+###################################
+Python
+windows下载和你Python版本相应对的exe文件安装即可
+
+C:\Program Files\Python\Lib\site-packages\
+
+
+第一个就是：
+Python Imaging Library (PIL)
+点击进去后，找到自己python版本的PIL，比如：
+Python Imaging Library 1.1.7 for Python 2.7 (Windows only)
+下载，双击，安装，即可。
+
+2. 如果下载到的是PIL源码，
+则打开cmd，切换到其目录
+然后执行
+setup.py install
+就可以通过源码方式安装了。
+
+############################
+JAVA
+下载mysql-connector-java-5.0.8.zip
+解压得到如下文件
+mysql-connector-java-5.0.8-bin.jar
+
+把mysql-connector-java-5.0.8-bin.jar 复制到JDK\jre\lib\ext
+本计算机的如下文件夹下
+C:\Program Files\Java\jdk1.8.0_31\jre\lib\ext
+
+DK\jre\lib\ext ，这个文件夹专门放置扩展的jar文件的地方
+##########################

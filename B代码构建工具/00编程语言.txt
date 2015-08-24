@@ -1,0 +1,28 @@
+语言本身就是一种工具，一些语言提供了其他语言所没有提出的功能
+
+选择有价值的语言，了解它们之间的区别，分别适合什么任务，以及它们的弱点是什么
+为你给定的任务选择最佳的语言
+  
+  系统
+  Windows
+  Linux      Ubuntu     Mac_OS 
+  BSD <Berkeley Software Distribution >
+  Unix
+ 
+
+  语言            能做什么   适合什么任务   是否可用  掌握程度     
+  C language     
+  C ++ 
+  Java           
+  Python                   
+  Perl                       
+  PHP
+  MySQL 
+  R language 
+  MATLAB  
+  XML 
+  HTML            
+  CSS 
+  JavaScript 
+  Photoshop         
+         

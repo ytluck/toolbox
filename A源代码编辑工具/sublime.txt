@@ -1,0 +1,13 @@
+sublime乱码
+
+C   运行sublime编写的源代码乱码
+
+Java运行sublime编写的源代码乱码
+
+perl运行sublime编写的源代码乱码
+
+PHP 运行sublime编写的源代码乱码
+
+R   运行sublime编写的源代码乱码
+
+MySQL运行sublime编写的源代码乱码
