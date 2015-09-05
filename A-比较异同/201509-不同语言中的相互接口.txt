@@ -1,0 +1,10 @@
+不同语言的相互交互
+R语言
+ R语言调用MySQL 用RMySQL
+
+Perl
+  在Perl中调用R： RSperl或者用Perl中的 Statistic::R
+  在Perl中调用MySQL
+
+Python
+ 从Python中调用R，接口Rpy

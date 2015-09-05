@@ -1,0 +1,40 @@
+在同一个文件下的函数调用
+
+在不同文件里的函数调用，或者文件包含
+C language
+ 用extern修饰函数声明，如果文件a.c需要引用b.c中的函数，比如在b.c中原型是int fun(int mu)，那么就可以在a.c中声明extern int fun（int mu），然后就能使用fun来做任何事情。
+    就像变量的声明一样，extern int fun（int mu）可以放在a.c中任何地方，而不一定非要放在a.c的文件作用域的范围中。
+ 或者
+ 写一个头文件声明被调用的函数，然后在程序里包含这个头文件就可以了，这是最普遍的做法  #include " "
+
+
+MATLAB怎样在一个文件里调用另一个文件里的函数
+ 将两个m文件放在同一目录。
+ 在第一个m文件里面直接输入第二个m文件的文件名即可 ("后缀名不要")
+
+ 如果是函数形式的m文件，将需要在另一个文件中调用的变量赋给函数的输出变量。
+ 如果不是函数形式的m文件，运行后该文件中的变量已经在workspace中了，另一个m文件只要不使用clear命令，是可以直接调用的。
+
+
+Perl
+   use 包   use List::MoreUtils qw(indexes);#use只能够使用模块
+
+   用require ('fulib.pl'); 进行声明，require可以指定路径
+   或者做成一个包，用use命令加载
+
+ 综上，在Perl是实现文件包含：
+ 1）使用do或者require(带引号的)那种方式；
+ 2）使用require Module或者use Module的模块方式
+
+  调用整个的话，可以再脚本中添加：system "";
+     system "perl UIL.pl -l atabse.t -l t -ps \"cah\"  -oreion \"E:/Tent/P_on/Reon\"  ;
+
+
+R language
+  library(包) library(ggplot2)
+
+ 调用整个的话，可以再脚本中添加source('路径与程序名')
+  source("zai.R")
+  或者使用Tinn-R那个Project来管理数目不多自编函数
+ 交互模式 
+ 批处理模式

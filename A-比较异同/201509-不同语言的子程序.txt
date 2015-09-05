@@ -1,0 +1,123 @@
+C language  Python    Shell   MATLAB   Perl   R language    MySQL
+Java
+
+C language
+   主函数和子函数
+    无参函数以及有参函数 空函数
+ 函数定义：
+      类型标识符 函数名(形参列表){
+      声明部分
+      语句
+      }
+ 参数：形参和实参 formal argument & actual argument
+     定义时，必须指定形参类型
+ 功能
+
+ 返回值
+   不需要返回值的话，可以不使用return，如果要有返回值，必须使用return
+ 
+ 函数调用
+    参数传递
+    全局变量以及局部变量
+    嵌套调用，递归调用
+
+Python
+
+Shell
+  
+
+MATLAB
+脚本和函数
+Script file
+Function
+ 函数声明行：Function declaration line 以关键字 function开头，定义函数名以及函数的输入输出变量
+  注释行H1行，
+  匿名函数，子函数，私有函数，重载函数，内联函数
+  function b= fz(F,ab,varargin)
+  %b=fz()
+  a=;
+  b=;
+  ^
+
+  变量：可变的输入输出变量 varargin
+			   varargout
+在MATLAB的平台上，对函数的调用分为直接调用和间接调用
+  直接调用，被调用的函数通常称之为子函数，但子函数只能被
+		与其M文件同名的 主函数或者M文件中的其他函数调用，同时在一个文件中只能有一个主函数。
+  间接调用：使用函数句柄，创建函数句柄需要使用操作符@
+   
+
+
+
+R language
+在R语言中，函数被称之为closure，函数不仅包括参数和函数体，也包括它的环境。
+  环境是由创建函数时出现的对象集构成的。理解R语言中环境的运行机制以及变量的作用域scope
+  R函数式第一类对象，函数类，function()，其功能是创建函数
+    eg:
+    fu <- function(x){
+    return (x+1)
+    }
+    可以使用formals()获得函数的输入参数
+    使用body()获得函数的函数体
+ 在R语言中国，可以避免使用return().不使用的话，默认返回最后执行的语句的值。
+ 返回值可以使R任何对象，甚至可以使另一个函数。
+
+Perl 
+  不同于其他编程语言，在定义时，有用户指定参数的类型以及个数，Perl语言通过采用默认参数列表变量
+  在进行函数定义的时候不需要指定参数列表信息，而在函数尸体出现时，采用数组赋值的方式，获取有效的刹那参数。
+  sub
+ 子程序的定义以及调用
+  子程序的结构：参数，功能以及返回值。简单的说就是输入是什么，作用是什么，输出是什么？
+首先是参数：参数的名称，结构，数据三者的合法性。作用范围scope
+            空参数列表，变长参数列表
+	    传入参数的方式:使用全局变量
+			：用shift函数逐个提取
+			： 使用列表赋值一次性获取。
+功能：
+返回值：
+定义，以及调用calling
+@_  这个符号的意义以及使用。
+参数列表变量，利用其实现参数的传递。引用式调用 参数列表传入子程序，得先将这个列表存在某处，Perl会自动将参数列表化名为特殊的数 组变量 @_,该变量在子程序执行期间有效
+ 用@_构造子程序的私有变量。
+ my ($file) = @_; #将参数赋值给变量，列表上下文，$file会被设置为第一个参数。
+
+
+
+
+MySQL
+ 内部函数：字符串函数，数学函数，日期和时间函数，信息函数，加密函数
+
+ 自定义函数
+	定义：create function   result begin end
+	  eg:
+	  delimiter $$
+	  create function GetRand()
+	   result interger
+	   begin
+	   declare returm;
+	   select ……;
+	   return r……;
+	   end
+	 调用 select GetRand();
+	 查看 show function status like 'GetRand' \G
+	 修改 alter function ……
+	 删除 drop function ……
+ 存储过程
+	定义：create procedure   begin end
+	  eg:
+	  delimiter $$
+	  create function GetRand()
+	   begin
+	   declare returm;
+	   select ……;
+	   return r……;
+	   end
+	   $$
+	   delimiter ; $$   -- 改回默认的 MySQL delimiter：“;”
+	 调用 call GetRand();
+	 查看 show procedure status like 'GetRand' \G
+	 修改 alter procedure ……
+	 删除 drop procedure  …
+  delimiter $$
+
+JAVA
