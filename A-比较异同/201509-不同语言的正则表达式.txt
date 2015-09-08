@@ -1,0 +1,93 @@
+重要的是如何使用正则表达式去解决实际问题
+精确的处理字符或者文本有 字符串函数
+搜索 替换
+
+正则表达式注意所使用的环境的语系，编码的方式lang。以及所采用的正则引擎。DFA  NFA.
+一类称为DFA（确定性有穷自动机），另一类称为NFA（非确定性有穷自动机）
+ 正则表达式=正则字符+元字符(metacharacter)
+DFA即假如一个输入符号，只能得到唯一的一个可能的状态。
+NFA即假如一个输入符号，可以得到两个或者两个以上可能的状态，也就是说得到的可能的状态是不确定；
+ DFA对于文本串里的每一个字符只需扫描一次，比较快，但特性较少；
+	文本主导
+ NFA要翻来覆去吃字符、吐字符，速度慢，但是特性丰富，所以反而应用广泛
+	表达式主导，回溯
+引擎类型	程序
+DFA		MySQL、awk(大多数版本)、egrep（大多数版本）、flex、lex、Procmail
+传统型 NFA	Perl、Java、Python、vi、grep（大多数版本）、less、more、.NET语言、PCRE library、
+		PHP（所有三套正则库）、Ruby、set（大多数版本）、GNU Emacs
+POSIX NFA	mawk、Mortice Lern System's utilities、GUN Emacs（明确指定时使用）
+DFA/NFA混合	GNU awk、 GNU grep/egrep、 Tcl
+
+元字符  空白元字符 转义字符 字符集
+重复 子表达式 定位字符串的开始和结尾
+回溯匹配 前后查找<对某一位置前后进行查找>
+
+JAVA
+
+Python
+
+Perl
+  把模式写在一对斜线中/ / 常常放在if和while的条件表达式中
+   模式分组()
+   反义简写
+   模式匹配操作符 m/ /
+    锚定
+    绑定操作符 =~
+    s/  /   /
+    split join 
+    贪婪量词
+MySQL
+
+字符串函数
+     length()	find_in_set(,)	left(str,len)	 concat()
+     mid()	upper()		trim(str)	insert()
+
+单表查询
+   标准查询
+   子查询
+      字符串的部分一致查询
+	=
+	or
+	like / not like    % 任意多个   _ 任意一个
+	between
+	in /not in
+	exist
+	is null / is not null
+      正则表达式查询
+   Where
+	regexp 匹配单个字符，匹配一组字符，重复匹配，位置匹配
+	    *		0到多个	只匹配任意长度的前面的字符，不能独立使用
+	    +		至少1个
+	    .		任意一个
+	    ^		匹配开头的
+	    $		匹配结尾
+	    |		或
+	    {M,N}	连续出现，至少出现M次，至多出现N次
+	    []		括号中任意字符
+
+ 多表查询
+     满足规则的记录以行为单位进行联结
+     union	intesect	except
+
+     以列为单位进行联结（横）
+       inner join  、 left outer join / right outer join、 cross join
+
+R语言
+   字符串函数	
+        nchar()
+	substr()
+	paste()
+	strsplit()
+
+   标准匹配	设置参数 fixed=TRUE
+   正则表达式	设置参数 fixed=FALSE
+	sub()		gsub()
+	regexpr()	gregexpr()
+	regexec()
+	grep grepl
+
+Linux下的一些工具
+ grep
+ sed
+ awk
+基础正则表达式 以及 扩展正则表达式
